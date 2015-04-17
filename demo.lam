@@ -17,6 +17,7 @@
 
 
 
+//// 
 // Syntax of Lambda calclus:
 
 // <var> := a|b|c|...|z
@@ -31,6 +32,12 @@
 
 
 
+
+
+
+
+
+////
 // Simplest lambda calculus program
 
 
@@ -39,6 +46,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+////
 // Getting to the truth of the matter
 
 
@@ -46,12 +65,39 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+////
 // Eager or Lazy?
 (F (U U) Id)
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+////
 // Making tuples out of closures
 // (\a \b \z (z a b))
 
@@ -59,6 +105,19 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+////
 // (\z z a b) (\x \y x)
 // ((\x \y x) a b)
 // a
@@ -74,6 +133,11 @@
 
 
 
+
+
+
+
+////
 // Lists from Tuples
 // (\i (Cons b0 (Cons b1 Nil)))
 
@@ -81,6 +145,19 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+////
 // List processing
 // (L M N)
 // L is Nil -> N
@@ -91,6 +168,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+////
 // The missing piece, recursion
 
 
@@ -99,6 +186,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+////
 // Example 1: reversing the input
 // (\input (input (U Reverse) Nil))
 
@@ -108,11 +207,18 @@
 
 
 
-// Demo 1: Hilbert
 
 
-// Demo 2: Primes
 
 
-// Deom 3: LC Interpreter
 
+
+
+
+
+
+////
+// Other demos: 
+// Hilbert
+// Primes
+// Self interpreter
