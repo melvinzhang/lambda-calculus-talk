@@ -4,14 +4,23 @@
 #define b0 T
 #define b1 F
 #define Nil F
+#define Fst T
+#define Snd F
 #define Cons (\a \b \z (z a b))
 #define U (\u u u)
 #define Y (\f ((\x f (x x)) (\x f (x x))))
-#define Reverse (\self \head \tail \acc (tail (self self) (Cons head acc)))
 
 (F (U U) Id)
+(T (U U) Id)
+
+((Cons Id U) Fst)
+((Cons Id U) Snd)
 
 L is Nil -> N
 L is <P,Q> -> M P Q N
 
+#define Ones (\self (Cons b1 (self self)))
+(\input (Ones Ones))
+
+#define Reverse (\self \head \tail \acc (tail (self self) (Cons head acc)))
 (\input (input (U Reverse) Nil))
