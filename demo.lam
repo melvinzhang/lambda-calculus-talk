@@ -79,7 +79,7 @@
 
 ////
 // Eager or Lazy?
-(F (U U) Id)
+
 
 
 
@@ -160,8 +160,8 @@
 ////
 // List processing
 // (L M N)
-// L is Nil -> N
-// L is <P,Q> -> M P Q N
+
+
 
 
 
@@ -198,8 +198,8 @@
 
 
 ////
-// Example 1: reversing the input
-// (\input (input (U Reverse) Nil))
+// Putting it all together. 
+// Write a program that reverses the input
 
 
 
@@ -219,6 +219,6 @@
 
 ////
 // Other demos: 
-// Hilbert
-// Primes
-// Self interpreter
+// hilbert
+// primes.dec
+// Self interpreter (uni344)
