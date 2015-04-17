@@ -1,0 +1,103 @@
+#define Id (\x x)
+#define T (\x \y x)
+#define F (\x \y y)
+#define b0 T
+#define b1 F
+#define Nil F
+#define Cons (\a \b \z (z a b))
+#define list01 (\i (Cons T (Cons F F)))
+#define U (\u u u)
+
+
+
+
+
+
+
+// Syntax of Lambda calclus:
+
+// <var> := a|b|c|...|z
+// <exp> := <var> | (\<var> <exp>) | (<exp> <exp)
+
+
+// Expressive language that allows small programs
+
+
+
+
+
+
+// Simplest lambda calculus program
+
+
+
+
+
+
+// Getting to the truth
+// (\x (\y x))
+// (\x \y x)
+
+
+
+
+// Eager or Lazy?
+
+
+
+
+
+// Making tuples out of nothing at all
+// <a,b>
+// (\a \b \z (z a b))
+
+
+
+
+
+// (\z z a b) (\x \y x)
+// ((\x \y x) a b)
+// a
+
+
+
+
+// (\z z a b) (\x \y y)
+// ((\x \y y) a b)
+// b
+
+
+
+
+
+// Lists from Tuples
+// (\i (Cons b0 (Cons b1 Nil)))
+
+
+// List processing
+// (L M N)
+// L is Nil -> N
+// L is <P,Q> -> M P Q N
+
+
+
+// The missing piece, recursion
+// (\x (x x))
+
+
+
+// Example 1: reversing the input
+#define Reverse (\self \head \tail \acc (tail (self self) (Cons head acc)))
+(\input (input (U Reverse) Nil))
+
+
+
+
+// Demo 1: Hilbert
+
+
+// Demo 2: Primes
+
+
+// Deom 3: LC Interpreter
+
