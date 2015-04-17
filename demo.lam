@@ -5,8 +5,11 @@
 #define b1 F
 #define Nil F
 #define Cons (\a \b \z (z a b))
-#define list01 (\i (Cons T (Cons F F)))
 #define U (\u u u)
+#define Y (\f ((\x f (x x)) (\x f (x x))))
+#define Reverse (\self \head \tail \acc (tail (self self) (Cons head acc)))
+
+
 
 
 
@@ -20,7 +23,8 @@
 // <exp> := <var> | (\<var> <exp>) | (<exp> <exp)
 
 
-// Expressive language that allows small programs
+
+
 
 
 
@@ -34,21 +38,21 @@
 
 
 
-// Getting to the truth
-// (\x (\y x))
-// (\x \y x)
+
+// Getting to the truth of the matter
+
+
 
 
 
 
 // Eager or Lazy?
+(F (U U) Id)
 
 
 
 
-
-// Making tuples out of nothing at all
-// <a,b>
+// Making tuples out of closures
 // (\a \b \z (z a b))
 
 
@@ -74,6 +78,9 @@
 // (\i (Cons b0 (Cons b1 Nil)))
 
 
+
+
+
 // List processing
 // (L M N)
 // L is Nil -> N
@@ -81,14 +88,22 @@
 
 
 
+
+
+
 // The missing piece, recursion
-// (\x (x x))
+
+
+
+
 
 
 
 // Example 1: reversing the input
-#define Reverse (\self \head \tail \acc (tail (self self) (Cons head acc)))
-(\input (input (U Reverse) Nil))
+// (\input (input (U Reverse) Nil))
+
+
+
 
 
 
