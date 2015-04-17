@@ -1,22 +1,3 @@
-#define Id (\x x)
-#define T (\x \y x)
-#define F (\x \y y)
-#define b0 T
-#define b1 F
-#define Nil F
-#define Cons (\a \b \z (z a b))
-#define U (\u u u)
-#define Y (\f ((\x f (x x)) (\x f (x x))))
-#define Reverse (\self \head \tail \acc (tail (self self) (Cons head acc)))
-
-
-
-
-
-
-
-
-
 //// 
 // Syntax of Lambda calclus:
 
