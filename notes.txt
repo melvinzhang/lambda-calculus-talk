@@ -1,4 +1,6 @@
-// L is Nil -> N
-// L is <P,Q> -> M P Q N
 (F (U U) Id)
+
+L is Nil -> N
+L is <P,Q> -> M P Q N
+
 (\input (input (U Reverse) Nil))
