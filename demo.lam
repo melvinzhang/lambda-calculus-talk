@@ -17,7 +17,6 @@
 
 
 
-
 ////
 // Simplest lambda calculus program
 
@@ -80,8 +79,8 @@
 
 ////
 // Making tuples out of closures
-// (\a \b \z (z a b))
-
+// . creating tuples
+// . select first/second
 
 
 
@@ -99,28 +98,8 @@
 
 
 ////
-// (\z z a b) (\x \y x)
-// ((\x \y x) a b)
-// a
+// Lists from tuples
 
-
-
-
-// (\z z a b) (\x \y y)
-// ((\x \y y) a b)
-// b
-
-
-
-
-
-
-
-
-
-////
-// Lists from Tuples
-// (\i (Cons b0 (Cons b1 Nil)))
 
 
 
