@@ -1,0 +1,22 @@
+Functional Programming from First Principles
+
+Many recent programming languages, such as Javascript, Ruby, and Scala,
+include elements of functional programming. These languages are large and
+complicated, which makes it difficult to grasp the essence of functional
+programming.
+
+Church's Lambda Calculus is the oldest and simplest possible functional
+programming language. It has the following syntax:
+<var> ::= a | b | ... | z
+<exp> ::= <var> | (\<var> <exp>) | (<exp> <exp>)
+
+In this talk, we will illustrate the principles of functional programming
+using Church's Lambda Calculus via a series of demos based on
+http://www.ioccc.org/2012/tromp/hint.html 
+
+About the speaker:
+Melvin Zhang is an avid programmer who enjoys minimal programming languages
+and elegant algorithms. At Cosmiqo International, Melvin is developing its
+sensor data aggregation and analytics platform. In his free time, he is trying
+to create the strongest AI to play Magic: the Gathering @
+https://magarena.github.io/
