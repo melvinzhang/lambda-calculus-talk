@@ -2,9 +2,9 @@
 // Syntax of Lambda calclus:
 
 // <var> := a|b|c|...|z
-// <exp> := <var> | (\<var> <exp>) | (<exp> <exp>)
-
-
+// <exp> :=   <var>          # variable reference
+//          | (\<var> <exp>) # function definition
+//          | (<exp> <exp>)  # function application
 
 
 
@@ -65,7 +65,7 @@
 // Eager or Lazy?
 // ((\x x x)(\x x x))
 // -> ((\x x x)(\x x x))
-// (T Id ((\x x x)(\x x x)))
+(T Id ((\x x x)(\x x x)))
 
 
 
@@ -179,7 +179,7 @@
 // Putting it all together. 
 // Write a program that reverses the input
 #define Reverse (\self \head \tail \acc (tail (self self) (Cons head acc)))
-(\input (input (U Reverse) F))
+//(\input (input (U Reverse) F))
 
 
 

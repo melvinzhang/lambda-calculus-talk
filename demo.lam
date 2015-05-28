@@ -2,9 +2,9 @@
 // Syntax of Lambda calclus:
 
 // <var> := a|b|c|...|z
-// <exp> := <var> | (\<var> <exp>) | (<exp> <exp)
-
-
+// <exp> :=   <var>          # variable reference
+//          | (\<var> <exp>) # function definition
+//          | (<exp> <exp>)  # function application
 
 
 
