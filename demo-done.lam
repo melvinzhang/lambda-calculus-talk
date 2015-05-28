@@ -1,0 +1,202 @@
+//// 
+// Syntax of Lambda calclus:
+
+// <var> := a|b|c|...|z
+// <exp> := <var> | (\<var> <exp>) | (<exp> <exp>)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////
+// Simplest lambda calculus program
+#define Id (\x x)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////
+// Getting to the truth of the matter
+#define T (\x \y x)
+#define F (\x \y y)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////
+// Eager or Lazy?
+// ((\x x x)(\x x x))
+// -> ((\x x x)(\x x x))
+// (T Id ((\x x x)(\x x x)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////
+// Making tuples out of closures
+// . creating tuples
+// . select first/second
+#define Cons (\x \y (\z (z x y)))
+//((Cons a b) T)
+//-> (T a b)
+//-> a
+//((Cons a b) F)
+//-> (F a b)
+//-> b
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////
+// Lists from tuples
+//(Cons d (Cons c (Cons a (Cons b F))))
+//-> [d, c, a, b]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////
+// List processing
+// (L M N)
+//If L = F, (F M N) = N
+//otherwise L = (Cons a L')
+//(Cons a L') M N
+//(M a L' N)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////
+// The missing piece, recursion
+#define M (\self \a \b (... (self a' b')....)
+#define U (\u u u)
+#define Y ...
+//(Y M)
+// U combinator
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////
+// Putting it all together. 
+// Write a program that reverses the input
+#define Reverse (\self \head \tail \acc (tail (self self) (Cons head acc)))
+(\input (input (U Reverse) F))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////
+// Other demos: 
+// hilbert
+// primes.dec
+// Self interpreter (uni344)
