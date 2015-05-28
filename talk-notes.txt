@@ -1,0 +1,30 @@
+Why did you choose the name “Y Combinator?”
+The Y combinator is one of the coolest ideas in computer science. It's also a
+metaphor for what we do. It's a program that runs programs; we're a company
+that helps start companies.
+-- https://www.ycombinator.com/faq/
+
+https://cs.stackexchange.com/questions/9604/clear-intuitive-derivation-of-the-fixed-point-combinator-y-combinator
+
+http://worrydream.com/AlligatorEggs/
+
+http://dkeenan.com/Lambda/index.htm
+
+http://okmij.org/ftp/Computation/lambda-calc.html
+
+
+--- New ideas for H&P version of this talk ---
+
+Family tree of languages, understanding the ancestor
+
+Lambda -> Tromp Lambda -> Church -> Turing -> Church-Turing thesis
+
+Lambda Cal is minimal yet allows elegant programs
+(as compared to Turing machines, abstraction is key, functions are composable)
+
+Algebraic data type in LC
+
+Proposition as types, relation to logic
+(aliens would know about LC)
+
+At the end, related back to familiar languages
