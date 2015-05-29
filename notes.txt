@@ -19,8 +19,8 @@
 L is Nil -> N
 L is <P,Q> -> M P Q N
 
-#define Ones (\self (Cons b1 (self self)))
-(\input (Ones Ones))
+#define OneThird (\self (Cons b0 (Cons b1 (self self))))
+(\input (OneThird OneThird))
 
 #define Reverse (\self \head \tail \acc (tail (self self) (Cons head acc)))
 (\input (input (U Reverse) Nil))

@@ -118,8 +118,8 @@
 
 
 ////
-// List processing
-// (L M N)
+// The missing piece, recursion
+
 
 
 
@@ -138,7 +138,28 @@
 
 
 ////
-// The missing piece, recursion
+// Generating an infinite list
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////
+// List processing
+// (L M N)
 
 
 
