@@ -8,7 +8,7 @@ programming.
 Church's Lambda Calculus is the oldest and simplest possible functional
 programming language. It has the following syntax:
 <var> ::= a | b | ... | z
-<exp> ::= <var> | (\<var> <exp>) | (<exp> <exp>)
+<exp> ::= <var> | (λ <var> <exp>) | (<exp> <exp>)
 
 In this talk, we will illustrate the principles of functional programming
 using Church's Lambda Calculus via a series of demos based on
@@ -20,3 +20,7 @@ and elegant algorithms. At Cosmiqo International, Melvin is developing its
 sensor data aggregation and analytics platform. In his free time, he is trying
 to create the strongest AI to play Magic: the Gathering @
 https://magarena.github.io/
+
+Venue sponsor:
+Plug-In@Blk71, Managed by NUS Enterprise
+71 Ayer Rajah Crescent, #02-18, Singapore 139951
