@@ -24,3 +24,9 @@ L is <P,Q> -> M P Q N
 
 #define Reverse (\self \head \tail \acc (tail (self self) (Cons head acc)))
 (\input (input (U Reverse) Nil))
+
+#data Maybe a = Just a | Nothing
+#define Just (\a \j \n j a)
+#define Nothing (\j \n n)
+
+(M (\a <do something with a>) Id)
