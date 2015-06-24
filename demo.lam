@@ -18,6 +18,26 @@
 
 
 ////
+// An elegant program for primes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////
 // Simplest lambda calculus program
 
 
@@ -39,26 +59,6 @@
 
 ////
 // Getting to the truth of the matter
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-////
-// Eager or Lazy?
 
 
 
@@ -118,27 +118,7 @@
 
 
 ////
-// The missing piece, recursion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-////
-// Generating an infinite list
+// On computable numbers
 
 
 
@@ -177,10 +157,8 @@
 
 
 
-
 ////
-// Putting it all together. 
-// Write a program that reverses the input
+// Flip it around
 
 
 
@@ -202,4 +180,4 @@
 // Other demos: 
 // hilbert
 // primes.dec
-// Self interpreter (uni344)
+// uni232
