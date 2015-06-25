@@ -1,0 +1,6 @@
+Dr Melvin Zhang will present his "Introduction to Lambda Calculus". As some of
+you know Functional Programming languages have been around a long time,
+however they are all based upon something much older, Lambda Calculus. Melvin
+will show how powerful Church's Lambda Calculus is and how it directly relates
+to Functional languages. this is a great basis from which to understand how to
+use Languages such as Clojure.
