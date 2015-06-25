@@ -6,23 +6,21 @@
 //          | (\<var> <exp>) # function definition
 //          | (<exp> <exp>)  # function application
 
+/* 
+This talk is based on https://github.com/melvinzhang/binary-lambda-calculus
 
-
-
-
-
-
-
-
+Setup for the demos:
+git clone https://github.com/melvinzhang/binary-lambda-calculus
+copy this file to binary-lambda-calculus
+cd binary-lambda-calculus
+*/
 
 
 
 ////
 // Sample programs: primes, hilbert
 /*
-git clone https://github.com/melvinzhang/binary-lambda-calculus
-cd binary-lambda-calculus
-make
+make uni
 make primes.bin
 make hilbert
 */
@@ -86,11 +84,12 @@ make hilbert
 ((Cons a b) T)
 -> (T a b)
 -> a
-=> T acts as the selector for first
+T acts as the selector for first
 
 ((Cons a b) F)
 -> (F a b)
-=> F acts as the selector for second
+-> b
+F acts as the selector for second
 */
 
 
@@ -102,7 +101,8 @@ make hilbert
 #define Nil F
 /*
 (Cons a (Cons b (Cons c Nil)))
-Note that we denote the empty list, Nil, as F. 
+
+Note that we use F to denote the empty list, Nil. 
 This simplifies the expression for list processing later.
 */
 
@@ -119,22 +119,22 @@ This simplifies the expression for list processing later.
 
 ////
 // On computable numbers
-#define OneThird (\self (Cons b0 (Cons b1 (self self))))
-
 /* 
 The following program generates the infinite list 0101010101.
 If we append 0. to the output, we get the binary expansion of 1/3.
 This is also the first example of Turing's 1936 paper.
 
-We make use of self reference via the U combinator to construct a recursive expression.
-Another method is via the Y combinator, see Richard P. Gabriel's http://www.dreamsongs.com/Files/WhyOfY.pdf
+We make use of self reference via the U combinator to construct a recursive
+expression.  Another method is via the Y combinator, see Richard P. Gabriel's 
+"The Why of Y" @ http://www.dreamsongs.com/Files/WhyOfY.pdf
 */
+#define b0 T
+#define b1 F
 #define U (\u u u)
-//(\input (U OneThird))
+#define OneThird (\self (Cons b0 (Cons b1 (self self))))
 
-
-
-
+// (\input (U OneThird))
+// To run the program, uncomment the above line, then run "make demo-done.b"
 
 
 ////
@@ -159,14 +159,14 @@ if L is (Cons h t)
 
 ////
 // Flip it around
-
-#define Reverse (\self \head \tail \acc (tail (self self) (Cons head acc)))
-
 /* 
 The following program reverses the input.
 */
 
+#define Reverse (\self \head \tail \acc (tail (self self) (Cons head acc)))
+
 // (\input (input (U Reverse) Nil))
+// To run the program, uncomment the above line, then run "make demo-done.Bi"
 
 
 
