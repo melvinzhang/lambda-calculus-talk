@@ -18,10 +18,28 @@
 
 
 ////
+// Sample programs: primes, hilbert
+/*
+git clone https://github.com/melvinzhang/binary-lambda-calculus
+cd binary-lambda-calculus
+make
+make primes.bin
+make hilbert
+*/
+
+
+
+
+
+
+
+
+
+
+
+////
 // Simplest lambda calculus program
 #define Id (\x x)
-
-
 
 
 
@@ -59,52 +77,21 @@
 
 
 
-
-
-////
-// Eager or Lazy?
-// ((\x x x)(\x x x))
-// -> ((\x x x)(\x x x))
-(T Id ((\x x x)(\x x x)))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ////
 // Making tuples out of closures
 // . creating tuples
 // . select first/second
-#define Cons (\x \y (\z (z x y)))
-//((Cons a b) T)
-//-> (T a b)
-//-> a
-//((Cons a b) F)
-//-> (F a b)
-//-> b
+#define Cons (\x \y \z (z x y))
+/*
+((Cons a b) T)
+-> (T a b)
+-> a
+=> T acts as the selector for first
 
-
-
-
-
-
-
-
-
-
-
-
+((Cons a b) F)
+-> (F a b)
+=> F acts as the selector for second
+*/
 
 
 
@@ -112,8 +99,12 @@
 
 ////
 // Lists from tuples
-//(Cons d (Cons c (Cons a (Cons b F))))
-//-> [d, c, a, b]
+#define Nil F
+/*
+(Cons a (Cons b (Cons c Nil)))
+Note that we denote the empty list, Nil, as F. 
+This simplifies the expression for list processing later.
+*/
 
 
 
@@ -124,6 +115,22 @@
 
 
 
+
+
+////
+// On computable numbers
+#define OneThird (\self (Cons b0 (Cons b1 (self self))))
+
+/* 
+The following program generates the infinite list 0101010101.
+If we append 0. to the output, we get the binary expansion of 1/3.
+This is also the first example of Turing's 1936 paper.
+
+We make use of self reference via the U combinator to construct a recursive expression.
+Another method is via the Y combinator, see Richard P. Gabriel's http://www.dreamsongs.com/Files/WhyOfY.pdf
+*/
+#define U (\u u u)
+//(\input (U OneThird))
 
 
 
@@ -133,58 +140,33 @@
 ////
 // List processing
 // (L M N)
-//If L = F, (F M N) = N
-//otherwise L = (Cons a L')
-//(Cons a L') M N
-//(M a L' N)
 
+/*
+if L is Nil
+  (Nil M N)
+  -> N
+  => N is the accumulator
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-////
-// The missing piece, recursion
-#define M (\self \a \b (... (self a' b')....)
-#define U (\u u u)
-#define Y ...
-//(Y M)
-// U combinator
-
-
-
-
-
-
-
-
-
-
-
+if L is (Cons h t)
+  ((Cons h t) M N)
+  -> (M h t N)
+  => M is the list processor, it takes at as arguments the head of the list,
+     the tail of the list, and the accumulator
+*/
 
 
 
 
 ////
-// Putting it all together. 
-// Write a program that reverses the input
+// Flip it around
+
 #define Reverse (\self \head \tail \acc (tail (self self) (Cons head acc)))
-//(\input (input (U Reverse) F))
 
+/* 
+The following program reverses the input.
+*/
 
-
-
-
+// (\input (input (U Reverse) Nil))
 
 
 
@@ -196,7 +178,13 @@
 
 
 ////
-// Other demos: 
-// hilbert
-// primes.dec
-// Self interpreter (uni344)
+// Inception
+/*
+uni232.lam is the interpreter for the Lambda Calculus writtin in Lambda Calculus
+
+make uni232.blc primes.blc
+cat uni232.blc primes.blc | ./uni -b | head -c 70
+cat uni232.blc uni232.blc primes.blc | ./uni -b | head -c 70
+cat uni232.blc uni232.blc uni232.blc primes.blc | ./uni -b | head -c 70
+cat uni232.blc uni232.blc uni232.blc uni232.blc primes.blc | ./uni -b | head -c 70
+*/
